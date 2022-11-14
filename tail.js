@@ -5,7 +5,7 @@
  * @param {string|number|boolean|Array<string|number|boolean>} expected - The second item to compare
  * @returns {string} Prints message with match outcome
  */
- const assertEqual = (actual, expected) => {
+const assertEqual = (actual, expected) => {
   let hasEquality = false;
   // If the items being asserted are arrays...
   if (Array.isArray(actual) && Array.isArray(expected)) {
@@ -34,14 +34,14 @@
  * undefined if the array was empty. If the array is empty or only has
  * one element, it returns an empty array
  * @param {Array} array - An array containing one or more elements
- * @returns {*} All but the first element from the array, or an empty
+ * @returns {Array} All but the first element from the array, or an empty
  * array
  */
 const tail = (array) => {
+  return Array.isArray(array) && array.length > 0 ? array.slice[1] : undefined;
+};
 
-}
-
-// Test Case: Check the original array 
+// Test Case: Check the original array
 const words = ["Yo Yo", "Lighthouse", "Labs"];
 tail(words); // no need to capture the return value since we are not checking it
 assertEqual(words.length, 3); // original array should still have 3 elements!
