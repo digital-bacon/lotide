@@ -5,7 +5,7 @@
  * @param {string|number|boolean|Array<string|number|boolean>} expected - The second item to compare
  * @returns {string} Prints message with match outcome
  */
- const assertEqual = (actual, expected) => {
+const assertEqual = (actual, expected) => {
   let hasEquality = false;
   // If the items being asserted are arrays...
   if (Array.isArray(actual) && Array.isArray(expected)) {
@@ -28,3 +28,9 @@
     console.log(`\n\x1b[33mTEST FAILED💥💥💥\n\x1b[36mresult:\n\x1b[0m`, actual, `\n\x1b[36mexpected:\x1b[0m\n`, expected, `\n\n----------`);
   }
 };
+
+// TEST CODE
+assertEqual("Lighthouse Labs", "Bootcamp");
+assertEqual("Bootcamp", "Bootcamp");
+assertEqual(1, 1);
+assertEqual(0, 1);
