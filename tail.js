@@ -9,7 +9,7 @@ const assertEqual = (actual, expected) => {
   let hasEquality = false;
   // If the items being asserted are arrays...
   if (Array.isArray(actual) && Array.isArray(expected)) {
-    // Ensure length of the array is as expected
+    // Ensure length of the arrays are as expected
     if (actual.length === expected.length) {
       // Evaluate each element for equality
       let totalEqualElements = 0;
