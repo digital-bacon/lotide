@@ -5,7 +5,7 @@
  * @param {string|number|boolean|Array<string|number|boolean>} expected - The second item to compare
  * @returns {string} Prints message with match outcome
  */
- export const assertEqual = (actual, expected) => {
+ const assertEqual = (actual, expected) => {
   let hasEquality = false;
   // If the items being asserted are arrays...
   if (Array.isArray(actual) && Array.isArray(expected)) {
