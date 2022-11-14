@@ -5,7 +5,7 @@
  * @param {string|number} expected - The second item to compare
  * @returns {string} Prints message with match outcome
  */
- const assertEqual = (actual, expected) => {
+const assertEqual = (actual, expected) => {
   if (actual === expected) {
     console.log(`\n\x1b[32mTEST PASSED🥳🥳🥳\n\x1b[36mresult:\n\x1b[0m`, actual, `\n\x1b[36mexpected:\x1b[0m\n`, expected, `\n\n----------`);
   } else {
@@ -19,9 +19,7 @@
  * @param {Array} array - An array containing one or more elements
  * @returns {*} The first element from the array
  */
-const head = (array) => {
-
-}
+const head = (array) => Array.isArray(array) && array.length > 0 ? array[0] : undefined;
 
 // TEST CASES
 assertEqual(head([5,6,7]), 5);
