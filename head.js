@@ -33,7 +33,7 @@ const assertEqual = (actual, expected) => {
  * Function that returns the first element from an array, or undefined
  * if the array was empty
  * @param {Array} array - An array containing one or more elements
- * @returns {*} The first element from the array
+ * @returns {*|undefined} The first element from the array, or undefined
  */
 const head = (array) => Array.isArray(array) && array.length > 0 ? array[0] : undefined;
 
