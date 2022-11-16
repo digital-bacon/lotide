@@ -5,7 +5,7 @@
  * @param {Array<string|number|boolean>} array2 - The second array to compare
  * @returns {boolean} The result of the evaluation
  */
- const assertArraysEqual = (array1, array2) => {
+const assertArraysEqual = (array1, array2) => {
   return console.log(printAssertEqualResult(eqArrays(array1, array2), array1, array2));
 };
 
@@ -75,34 +75,33 @@ const printAssertEqualResult = (hasEquality, actual, expected) => {
 /**
  * Function that copies the `source` array, while excluding items that
  * are found in the `removeItems` array
- * @param {Array<string|number|boolean>} sourceItems - The array to be copied 
+ * @param {Array<string|number|boolean>} sourceItems - The array to be copied
  * @param {Array<string|number|boolean>} removeItems - An array of items to not include in the
  * returned array
  * @returns {Array} The copied array
  */
 const without = (sourceItems, removeItems) => {
-  // Loop through source items
-  console.group('loopSourceItems');
-  loopSourceItems:
+  let output = [];
   for (const sourceItem of sourceItems) {
-    console.log(`sourceItem: ${sourceItem}`)
-    // Check if the current source item matches an item in remove items
-    console.group('loopRemoveItems');
+    let canAddItem = true;
     loopRemoveItems:
     for (const removeItem of removeItems) {
-      console.log(`removeItem: ${removeItem}`)
-      // Add source item to new array if not a match
+      // Check if the current source item matches an item in remove items
+      if (removeItem === sourceItem) {
+        canAddItem = false;
+        break loopRemoveItems;
+      }
     }
-    console.groupEnd('loopRemoveItems');
+    // Add source item to new array if not an item in removeItems
+    if (canAddItem) output.push(sourceItem);
   }
-  console.groupEnd('loopSourceItems');
   // Return the new array
-  console.log('---- END ----');
-}
+  return output;
+};
 
 // TEST CASES
-without([1, 2, 3], [1]) // => [2, 3]
-without(["1", "2", "3"], [1, 2, "3"]) // => ["1", "2"]
+console.log(without([1, 2, 3], [1])); // => [2, 3]
+console.log(without(["1", "2", "3"], [1, 2, "3"])); // => ["1", "2"]
 
 const words = ["hello", "world", "lighthouse"];
 without(words, ["lighthouse"]); // no need to capture return value for this test case
