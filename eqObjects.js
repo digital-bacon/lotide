@@ -10,6 +10,26 @@ const assertEqual = (actual, expected) => {
 };
 
 /**
+ * Function that compares 2 arrays for equality and returns the result
+ * @param {Array<string|number|boolean>} array1 - The first array to compare
+ * @param {Array<string|number|boolean>} array2 - The second array to compare
+ * @returns {boolean} The result of the evaluation
+ */
+ const eqArrays = (array1, array2) => {
+  // If the items being asserted are arrays...
+  if (!Array.isArray(array1) || !Array.isArray(array2)) return false;
+  // Ensure length of the arrays are as array2
+  if (array1.length !== array2.length) return false;
+  // Evaluate each element for equality
+  for (let element = 0; element < array2.length; element++) {
+    // Evaluate element type equality
+    if (array1[element] !== array2[element]) return false;
+  }
+  // No tests remain, so we have equality
+  return true;
+};
+
+/**
  * Function that builds a message for the assertEqual functions in this
  * library
  * @param {boolean} hasEquality - Result of equality check
@@ -57,13 +77,15 @@ const printAssertEqualResult = (hasEquality, actual, expected) => {
  * @param {Object} object2 - The second object to evaluate
  */
 const eqObjects = (object1, object2) => {
-  // Evaluate for type
-  if (object1 instanceof Object === false || (object2 instanceof Array)) return false;
+  const keys1 = Object.keys(object1);
+  const keys2 = Object.keys(object2);
   // Evaluate for total keys
-  if (Object.keys(object1).length !== Object.keys(object2).length) return false;
+  if (keys1.length !== keys2.length) return false;
   // Evaluate each property for equality
-  for (const key in Object.keys(object1)) {
-    if (object1[key] !== object2[key]) return false;
+  for (const key of keys1) {
+    const value1 = object1[key];
+    const value2 = object1[key];
+    if (value1 !== value2) return false;
   }
   // No tests remain, so we have equality
   return true;
