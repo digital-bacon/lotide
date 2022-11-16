@@ -74,7 +74,7 @@ const letterPositions = function(sentence) {
     if (keyName === ' ') continue loopSentence;
     // If the index is not yet a key in `results`, create it
     if (!results.hasOwnProperty(keyName)) results[keyName] = [];
-    // Record the index of this index in the results
+    // Record the index in the results
     results[sentence[index]].push(Number(index));
   }
   return results;
@@ -97,12 +97,12 @@ const expectedResult = {
 }
 
 assertArraysEqual(letterPositions(testInput).l, expectedResult.l);
-// assertArraysEqual(letterPositions(testInput).i, expectedResult.i);
-// assertArraysEqual(letterPositions(testInput).g, expectedResult.g);
-// assertArraysEqual(letterPositions(testInput).h, expectedResult.h);
-// assertArraysEqual(letterPositions(testInput).t, expectedResult.t);
-// assertArraysEqual(letterPositions(testInput).o, expectedResult.o);
-// assertArraysEqual(letterPositions(testInput).u, expectedResult.u);
-// assertArraysEqual(letterPositions(testInput).s, expectedResult.s);
-// assertArraysEqual(letterPositions(testInput).e, expectedResult.e);
-// assertArraysEqual(letterPositions(testInput).n, expectedResult.n);
+assertArraysEqual(letterPositions(testInput).i, expectedResult.i);
+assertArraysEqual(letterPositions(testInput).g, expectedResult.g);
+assertArraysEqual(letterPositions(testInput).h, expectedResult.h);
+assertArraysEqual(letterPositions(testInput).t, expectedResult.t);
+assertArraysEqual(letterPositions(testInput).o, expectedResult.o);
+assertArraysEqual(letterPositions(testInput).u, expectedResult.u);
+assertArraysEqual(letterPositions(testInput).s, expectedResult.s);
+assertArraysEqual(letterPositions(testInput).e, expectedResult.e);
+assertArraysEqual(letterPositions(testInput).n, expectedResult.n);
