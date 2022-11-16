@@ -5,7 +5,7 @@
  * @param {Array<string|number|boolean>} array2 - The second array to compare
  * @returns {boolean} The result of the evaluation
  */
- const assertArraysEqual = (array1, array2) => {
+const assertArraysEqual = (array1, array2) => {
   return console.log(printAssertEqualResult(eqArrays(array1, array2), array1, array2));
 };
 
@@ -73,7 +73,7 @@ const letterPositions = function(sentence) {
     // Don't count spaces
     if (keyName === ' ') continue loopSentence;
     // If the index is not yet a key in `results`, create it
-    if (!results.hasOwnProperty(keyName)) results[keyName] = [];
+    if (!results[keyName]) results[keyName] = [];
     // Record the index in the results
     results[sentence[index]].push(Number(index));
   }
@@ -83,7 +83,7 @@ const letterPositions = function(sentence) {
 // Test case
 
 const testInput = 'lighthouse in the house';
-const expectedResult = { 
+const expectedResult = {
   l: [0],
   i: [1, 11],
   g: [2],
@@ -94,7 +94,7 @@ const expectedResult = {
   s: [8, 21],
   e: [9, 16, 22],
   n: [12]
-}
+};
 
 assertArraysEqual(letterPositions(testInput).l, expectedResult.l);
 assertArraysEqual(letterPositions(testInput).i, expectedResult.i);
