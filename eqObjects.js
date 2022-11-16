@@ -38,6 +38,9 @@ const eqArrays = (array1, array2) => {
  * @returns {string} A formatted message
  */
 const printAssertEqualResult = (hasEquality, actual, expected) => {
+  
+  // To output objects with their kv pairs
+  const inspect = require('util').inspect;
 
   // Color settings
   const color = {
