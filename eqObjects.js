@@ -5,7 +5,7 @@
  * @param {string|number|boolean} expected - The second item to compare
  * @returns {string} Prints message with match outcome
  */
- const assertEqual = (actual, expected) => {
+const assertEqual = (actual, expected) => {
   console.log(printAssertEqualResult((actual === expected), actual, expected));
 };
 
@@ -58,13 +58,13 @@ const printAssertEqualResult = (hasEquality, actual, expected) => {
  */
 const eqObjects = (object1, object2) => {
   // Evaluate for type
-  if (!object1 instanceof Object || (object2 instanceof Array)) return false
+  if (object1 instanceof Object === false || (object2 instanceof Array)) return false;
   // Evaluate for total keys
-  if (Object.keys(object1).length !== Object.keys(object2).length) return false
+  if (Object.keys(object1).length !== Object.keys(object2).length) return false;
   // Evaluate each property for equality
   for (const key in Object.keys(object1)) {
     if (object1[key] !== object2[key]) return false;
-  };
+  }
   // No tests remain, so we have equality
   return true;
 };
