@@ -51,9 +51,9 @@ const printAssertEqualResult = (hasEquality, actual, expected) => {
 /**
  * Function that compares 2 arrays for equality and prints out a
  * message telling us if they match or not
- * @param {Array<string|number|boolean>} actual - The first item to compare
- * @param {Array<string|number|boolean>} expected - The second item to compare
- * @returns {string} Prints message with match outcome
+ * @param {Array<string|number|boolean>} array1 - The first array to compare
+ * @param {Array<string|number|boolean>} array2 - The second array to compare
+ * @returns {boolean} The result of the evaluation
  */
 const eqArrays = (array1, array2) => {
   // If the items being asserted are arrays...
