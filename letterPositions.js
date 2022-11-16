@@ -69,7 +69,10 @@ const letterPositions = function(sentence) {
   // Look at each index
   loopSentence:
   for (const index in sentence) {
-    console.log(sentence[index])
+    let keyName = sentence[index];
+    // Don't count spaces
+    if (keyName === ' ') continue loopSentence;
+    
   }
   return results;
 };
