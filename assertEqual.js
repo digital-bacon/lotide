@@ -10,7 +10,8 @@ const assertEqual = (actual, expected) => {
 };
 
 /**
- * Function that builds a message for the assertEqual() function
+ * Function that builds a message for the assertEqual functions in this
+ * library
  * @param {boolean} hasEquality - Result of equality check
  * @param {*} actual - Input passed to the equality check
  * @param {*} expected - Expected input in the equality check
