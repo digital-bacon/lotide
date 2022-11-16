@@ -74,7 +74,8 @@ const letterPositions = function(sentence) {
     if (keyName === ' ') continue loopSentence;
     // If the index is not yet a key in `results`, create it
     if (!results.hasOwnProperty(keyName)) results[keyName] = [];
-
+    // Record the index of this index in the results
+    results[sentence[index]].push(Number(index));
   }
   return results;
 };
