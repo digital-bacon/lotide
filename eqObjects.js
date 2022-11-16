@@ -84,7 +84,7 @@ const eqObjects = (object1, object2) => {
   // Evaluate each property for equality
   for (const key of keys1) {
     const value1 = object1[key];
-    const value2 = object1[key];
+    const value2 = object2[key];
     if (value1 !== value2) return false;
   }
   // No tests remain, so we have equality
