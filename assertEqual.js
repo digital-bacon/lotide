@@ -20,32 +20,35 @@ const assertEqual = (actual, expected) => {
 const printAssertEqualResult = (hasEquality, actual, expected) => {
 
   // Color settings
-  const colorReset = '\x1b[0m'; // Reset colors
-  const colorMessageSuccess = '\x1b[32m'; // Green
-  const colorMessageFailure = '\x1b[33m'; // Yellow
-  const colorLabelResult = '\x1b[36m'; // Blue
-  const colorLabelExpected = '\x1b[36m'; // Blue
-
-  // Messages
-  const messageBefore = '\n';
-  const messageSuccess = colorMessageSuccess + `TEST PASSED🥳🥳🥳\n` + colorReset;
-  const messageFailure = colorMessageFailure + `TEST FAILED💥💥💥\n` + colorReset;
-  const messageResult = colorLabelResult + `result:\n` + colorReset + `${actual}\n`;
-  const messageExpected = colorLabelExpected + `expected:\n` + colorReset + `${expected}\n`;
-  const messageAfter = `\n----------`;
+  const color = {
+    reset: '\x1b[0m', // Reset colors
+    messageSuccess: '\x1b[32m', // Green
+    messageFailure: '\x1b[33m', // Yellow
+    labelResult: '\x1b[36m', // Blue
+    labelExpected: '\x1b[36m', // Blue
+  };
+  
+  // Message configuration
+  const message = {
+    before: '\n',
+    success: color.messageSuccess + `TEST PASSED🥳🥳🥳\n` + color.reset,
+    failure: color.messageFailure + `TEST FAILED💥💥💥\n` + color.reset,
+    result: color.labelResult + `result:\n` + color.reset + `${actual}\n`,
+    expected: color.labelExpected + `expected:\n` + color.reset + `${expected}\n`,
+    after: `\n----------`,
+    buildMessage: function() {
+      let message = '';
+      message += this.before;
+      message += hasEquality ? this.success : this.failure;
+      message += this.result;
+      message += this.expected;
+      message += this.after;
+      return message;
+    }
+  };
 
   // Build the message to show the user
-  let message = '';
-  message += messageBefore;
-  if (hasEquality) {
-    message += messageSuccess;
-  } else {
-    message += messageFailure;
-  }
-  message += messageResult;
-  message += messageExpected;
-  message += messageAfter;
-  return message;
+  return message.buildMessage();
 };
 
 // TEST CODE
