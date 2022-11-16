@@ -81,7 +81,23 @@ const printAssertEqualResult = (hasEquality, actual, expected) => {
  * @returns {Array} The copied array
  */
 const without = (sourceItems, removeItems) => {
-  
+  // Loop through source items
+  console.group('loopSourceItems');
+  loopSourceItems:
+  for (const sourceItem of sourceItems) {
+    console.log(`sourceItem: ${sourceItem}`)
+    // Check if the current source item matches an item in remove items
+    console.group('loopRemoveItems');
+    loopRemoveItems:
+    for (const removeItem of removeItems) {
+      console.log(`removeItem: ${removeItem}`)
+      // Add source item to new array if not a match
+    }
+    console.groupEnd('loopRemoveItems');
+  }
+  console.groupEnd('loopSourceItems');
+  // Return the new array
+  console.log('---- END ----');
 }
 
 // TEST CASES
