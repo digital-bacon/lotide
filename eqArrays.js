@@ -56,20 +56,16 @@ const printAssertEqualResult = (hasEquality, actual, expected) => {
  */
 const eqArrays = (array1, array2) => {
   // If the items being asserted are arrays...
-  if (Array.isArray(array1) && Array.isArray(array2)) {
-    // Ensure length of the arrays are as array2
-    if (array1.length === array2.length) {
-      // Evaluate each element for equality
-      let totalEqualElements = 0;
-      for (let element = 0; element < array2.length; element++) {
-        // Evaluate element type equality
-        if (array1[element] === array2[element]) totalEqualElements++;
-      }
-      // If the total equal elements matches array2, we have equality
-      if (totalEqualElements === array2.length) return true;
-    }
+  if (!Array.isArray(array1) || !Array.isArray(array2)) return false;
+  // Ensure length of the arrays are as array2
+  if (array1.length !== array2.length) return false;
+  // Evaluate each element for equality
+  for (let element = 0; element < array2.length; element++) {
+    // Evaluate element type equality
+    if (array1[element] !== array2[element]) return false;
   }
-  return false;
+  // No tests remain, so we have equality
+  return true;
 };
 
 // TEST CODE
