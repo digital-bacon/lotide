@@ -11,7 +11,7 @@ const assertEqual = (actual, expected) => {
 
 /**
  * Function that builds a message for the assertEqual() function
- * @param {boolean} hasEquality - Result of equality check 
+ * @param {boolean} hasEquality - Result of equality check
  * @param {*} actual - Input passed to the equality check
  * @param {*} expected - Expected input in the equality check
  * @returns {string} A formatted message
@@ -45,7 +45,7 @@ const printAssertEqualResult = (hasEquality, actual, expected) => {
   message += messageExpected;
   message += messageAfter;
   return message;
-}
+};
 
 // TEST CODE
 assertEqual("Lighthouse Labs", "Bootcamp");
