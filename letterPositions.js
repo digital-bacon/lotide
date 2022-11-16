@@ -72,7 +72,9 @@ const letterPositions = function(sentence) {
     let keyName = sentence[index];
     // Don't count spaces
     if (keyName === ' ') continue loopSentence;
-    
+    // If the index is not yet a key in `results`, create it
+    if (!results.hasOwnProperty(keyName)) results[keyName] = [];
+
   }
   return results;
 };
