@@ -1,15 +1,4 @@
 /**
- * Function that compares 2 values for equality and prints out a
- * message telling us if they match or not
- * @param {string|number|boolean} actual - The first item to compare
- * @param {string|number|boolean} expected - The second item to compare
- * @returns {string} Prints message with match outcome
- */
- const assertEqual = (actual, expected) => {
-  console.log(printAssertEqualResult((actual === expected), actual, expected));
-};
-
-/**
  * Function that compares 2 arrays for equality and returns the result
  * @param {Array<string|number|boolean>} array1 - The first array to compare
  * @param {Array<string|number|boolean>} array2 - The second array to compare
