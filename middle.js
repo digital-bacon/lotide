@@ -97,20 +97,20 @@ const middle = (array) => {
   // Return two elements for arrays with even number of elements
   if (isEven(array.length)) {
     middle.push(Math.ceil((array.length + 1) / 2));
-  } 
+  }
   // Return the result
   return middle;
 };
 
 // Test cases:
 // Edge tests
-assertArraysEqual(middle([1]), []) // True
-assertArraysEqual(middle([1, 2]), []) // True
+assertArraysEqual(middle([1]), []); // True
+assertArraysEqual(middle([1, 2]), []); // True
 
 // Return single element for arrays with odd number of elements
-assertArraysEqual(middle([1, 2, 3]), [2]) // => [2]
-assertArraysEqual(middle([1, 2, 3, 4, 5]), [3]) // => [3]
+assertArraysEqual(middle([1, 2, 3]), [2]); // True
+assertArraysEqual(middle([1, 2, 3, 4, 5]), [3]); // True
 
 // Return two elements for arrays with even number of elements
-assertArraysEqual(middle([1, 2, 3, 4]), [2, 3]) // => [2, 3]
-assertArraysEqual(middle([1, 2, 3, 4, 5, 6]), [3, 4]) // => [3, 4]
+assertArraysEqual(middle([1, 2, 3, 4]), [2, 3]); // True
+assertArraysEqual(middle([1, 2, 3, 4, 5, 6]), [3, 4]); // True
