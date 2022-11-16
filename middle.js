@@ -94,6 +94,11 @@ const middle = (array) => {
   let middle = []; // To store the result
   // Get the item at the middle index
   middle.push(Math.ceil(array.length / 2));
+  // Return two elements for arrays with even number of elements
+  if (isEven(array.length)) {
+    middle.push(Math.ceil((array.length + 1) / 2));
+  } 
+  // Return the result
   return middle;
 };
 
