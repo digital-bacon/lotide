@@ -57,6 +57,8 @@ const printAssertEqualResult = (hasEquality, actual, expected) => {
  * @param {Object} object2 - The second object to evaluate
  */
 const eqObjects = (object1, object2) => {
+  // Evaluate for total keys
+  if (Object.keys(object1).length !== Object.keys(object2).length) return false
   // Evaluate each property for equality
   for (const key in Object.keys(object1)) {
     if (object1[key] !== object2[key]) return false;
