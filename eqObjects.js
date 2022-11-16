@@ -51,20 +51,23 @@ const printAssertEqualResult = (hasEquality, actual, expected) => {
   return message.buildMessage();
 };
 
-// Returns true if both objects have identical keys with identical values.
-// Otherwise you get back a big fat false!
 /**
  * Function that evaluates two provided objects for equality
  * @param {Object} object1 - The first object to evaluate
  * @param {Object} object2 - The second object to evaluate
  */
 const eqObjects = (object1, object2) => {
-
+  // Evaluate each property for equality
+  for (const key in Object.keys(object1)) {
+    if (object1[key] !== object2[key]) return false;
+  };
+  // No tests remain, so we have equality
+  return true;
 };
 
 const ab = { a: "1", b: "2" };
 const ba = { b: "2", a: "1" };
-eqObjects(ab, ba); // => true
+assertEqual(eqObjects(ab, ba), true); // => true
 
 const abc = { a: "1", b: "2", c: "3" };
-eqObjects(ab, abc); // => false
+assertEqual(eqObjects(ab, abc), false); // => false
