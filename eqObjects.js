@@ -75,6 +75,7 @@ const printAssertEqualResult = (hasEquality, actual, expected) => {
  * Function that evaluates two provided objects for equality
  * @param {Object} object1 - The first object to evaluate
  * @param {Object} object2 - The second object to evaluate
+ * @returns {boolean} The outcome of the evaluation
  */
 const eqObjects = (object1, object2) => {
   const keys1 = Object.keys(object1);
@@ -97,6 +98,7 @@ const eqObjects = (object1, object2) => {
   return true;
 };
 
+// Test cases: Primitives as property values
 const ab = { a: "1", b: "2" };
 const ba = { b: "2", a: "1" };
 assertEqual(eqObjects(ab, ba), true); // => true
@@ -104,6 +106,7 @@ assertEqual(eqObjects(ab, ba), true); // => true
 const abc = { a: "1", b: "2", c: "3" };
 assertEqual(eqObjects(ab, abc), false); // => false
 
+// Test cases: Arrays in property values
 const obj1 = { c: "1", d: ["2", 3] };
 const obj2 = { d: ["2", 3], c: "1" };
 assertEqual(eqObjects(obj1, obj2), true); // => true
