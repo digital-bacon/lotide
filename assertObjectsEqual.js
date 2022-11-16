@@ -38,6 +38,8 @@ const eqArrays = (array1, array2) => {
  * @returns {string} A formatted message
  */
 const printAssertEqualResult = (hasEquality, actual, expected) => {
+  // To output objects with their kv pairs
+  const inspect = require('util').inspect;
 
   // Color settings
   const color = {
@@ -53,8 +55,8 @@ const printAssertEqualResult = (hasEquality, actual, expected) => {
     before: '\n',
     success: color.messageSuccess + `TEST PASSED🥳🥳🥳\n` + color.reset,
     failure: color.messageFailure + `TEST FAILED💥💥💥\n` + color.reset,
-    result: color.labelResult + `result:\n` + color.reset + `${actual}\n`,
-    expected: color.labelExpected + `expected:\n` + color.reset + `${expected}\n`,
+    result: color.labelResult + `result:\n` + color.reset + `${inspect(actual)}\n`,
+    expected: color.labelExpected + `expected:\n` + color.reset + `${inspect(expected)}\n`,
     after: `\n----------`,
     buildMessage: function() {
       let message = '';
@@ -105,22 +107,23 @@ const eqObjects = (object1, object2) => {
  * @param {Object} expected - The second item to compare
  */
 const assertObjectsEqual = (object1, object2) => {
+  
   return console.log(printAssertEqualResult(eqObjects(object1, object2), object1, object2));
 };
 
 // Test cases: Primitives as property values
 const ab = { a: "1", b: "2" };
 const ba = { b: "2", a: "1" };
-assertObjectsEqual(eqObjects(ab, ba), true); // => true
+assertObjectsEqual(ab, ba); // => true
 
 const abc = { a: "1", b: "2", c: "3" };
-assertObjectsEqual(eqObjects(ab, abc), false); // => false
+assertObjectsEqual(ab, abc); // => false
 
 // Test cases: Arrays in property values
 const obj1 = { c: "1", d: ["2", 3] };
 const obj2 = { d: ["2", 3], c: "1" };
-assertObjectsEqual(eqObjects(obj1, obj2), true); // => true
+assertObjectsEqual(obj1, obj2); // => true
 
 const obj3 = { c: "1", d: ["2", 3] };
 const obj4 = { c: "1", d: ["2", 3, 4] };
-assertObjectsEqual(eqObjects(obj3, obj4), false); // => false
+assertObjectsEqual(obj3, obj4); // => false
