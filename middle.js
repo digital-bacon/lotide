@@ -89,7 +89,12 @@ const isEven = number => {
  * @returns {*|undefined} The first element from the array, or undefined
  */
 const middle = (array) => {
-  
+  // We can only get middle from arrays with at least 3 elements
+  if (!Array.isArray(array) || array.length < 3) return [];
+  let middle = []; // To store the result
+  // Get the item at the middle index
+  middle.push(Math.ceil(array.length / 2));
+  return middle;
 };
 
 // Test cases:
@@ -101,6 +106,6 @@ assertArraysEqual(middle([1, 2]), []) // True
 assertArraysEqual(middle([1, 2, 3]), [2]) // => [2]
 assertArraysEqual(middle([1, 2, 3, 4, 5]), [3]) // => [3]
 
-// Return two elements for arrays with odd number of elements
+// Return two elements for arrays with even number of elements
 assertArraysEqual(middle([1, 2, 3, 4]), [2, 3]) // => [2, 3]
 assertArraysEqual(middle([1, 2, 3, 4, 5, 6]), [3, 4]) // => [3, 4]
