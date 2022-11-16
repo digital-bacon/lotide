@@ -15,7 +15,7 @@ const assertEqual = (actual, expected) => {
  * @param {Array<string|number|boolean>} array2 - The second array to compare
  * @returns {boolean} The result of the evaluation
  */
- const eqArrays = (array1, array2) => {
+const eqArrays = (array1, array2) => {
   // If the items being asserted are arrays...
   if (!Array.isArray(array1) || !Array.isArray(array2)) return false;
   // Ensure length of the arrays are as array2
