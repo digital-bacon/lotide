@@ -63,7 +63,14 @@ const printAssertEqualResult = (hasEquality, actual, expected) => {
   return message.buildMessage();
 };
 
-
+/**
+ * Function that receives a string, and returns an object with a key
+ * for each unique character, as well the character positions in the
+ * string
+ * @param {string} sentence - The string to analyze
+ * @returns {Object} An object with a key matching each unique
+ * character, and where to find them in the sentence
+ */
 const letterPositions = function(sentence) {
   const results = {};
   // Look at each index

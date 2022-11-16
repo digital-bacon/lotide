@@ -54,7 +54,7 @@ const printAssertEqualResult = (hasEquality, actual, expected) => {
 /**
  * Function that counts the total instances of a letter in a string
  * @param {string} string - The string containing the characters you
- * wish to count
+ * wish to countnode
  * @returns {Object} An object with characters as keys, and the total
  * instances of that character in the provided string
  */
