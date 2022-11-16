@@ -85,7 +85,13 @@ const eqObjects = (object1, object2) => {
   for (const key of keys1) {
     const value1 = object1[key];
     const value2 = object2[key];
-    if (value1 !== value2) return false;
+    // Evaluate as an array if an array
+    if (Array.isArray(value1)) {
+      if (eqArrays(value1, value2) === false) return false;
+    } else {
+      // Otherwise, evaluate as a primitive
+      if (value1 !== value2) return false;
+    }
   }
   // No tests remain, so we have equality
   return true;
@@ -97,3 +103,11 @@ assertEqual(eqObjects(ab, ba), true); // => true
 
 const abc = { a: "1", b: "2", c: "3" };
 assertEqual(eqObjects(ab, abc), false); // => false
+
+const obj1 = { c: "1", d: ["2", 3] };
+const obj2 = { d: ["2", 3], c: "1" };
+assertEqual(eqObjects(obj1, obj2), true); // => true
+
+const obj3 = { c: "1", d: ["2", 3] };
+const obj4 = { c: "1", d: ["2", 3, 4] };
+assertEqual(eqObjects(obj3, obj4), false); // => false
