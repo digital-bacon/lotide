@@ -5,7 +5,7 @@
  * @param {Array<string|number|boolean>} array2 - The second array to compare
  * @returns {boolean} The result of the evaluation
  */
- const assertArraysEqual = (array1, array2) => {
+const assertArraysEqual = (array1, array2) => {
   return console.log(printAssertEqualResult(eqArrays(array1, array2), array1, array2));
 };
 
@@ -70,7 +70,6 @@ const flatten = (array) => {
   const buffer = [];
   // Loop through an existing array of items
   for (const item of array) {
-    console.log(item)
     // If a nested array is found
     if (Array.isArray(item)) {
       // Loop through an existing array of items
@@ -84,6 +83,6 @@ const flatten = (array) => {
     }
   }
   return buffer;
-}
+};
 
-assertArraysEqual(flatten([1, 2, [3, 4], 5, [6]]), [1, 2, 3, 4, 5, 6]) // => [1, 2, 3, 4, 5, 6]
+assertArraysEqual(flatten([1, 2, [3, 4], 5, [6]]), [1, 2, 3, 4, 5, 6]); // => [1, 2, 3, 4, 5, 6]
