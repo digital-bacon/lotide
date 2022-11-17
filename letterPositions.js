@@ -28,6 +28,15 @@ const eqArrays = (array1, array2) => {
   // No tests remain, so we have equality
   return true;
 };
+
+/**
+ * Function that builds a message for the assertEqual functions in this
+ * library
+ * @param {boolean} hasEquality - Result of equality check
+ * @param {*} actual - Input passed to the equality check
+ * @param {*} expected - Expected input in the equality check
+ * @returns {string} A formatted message
+ */
 const printAssertEqualResult = (hasEquality, actual, expected) => {
   
   // To output objects with their kv pairs
@@ -43,7 +52,7 @@ const printAssertEqualResult = (hasEquality, actual, expected) => {
     {type: 'expected-label', color: '\x1b[36m', text: `expected:\n`},
     {type: 'expected-value', color: '', text: `${inspect(expected)}\n`},
     {type: 'after', color: '', text: `\n----------`},
-  ]
+  ];
   
   const resetColor = '\x1b[0m';
   let message = '';

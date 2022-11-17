@@ -32,7 +32,7 @@ const printAssertEqualResult = (hasEquality, actual, expected) => {
     {type: 'expected-label', color: '\x1b[36m', text: `expected:\n`},
     {type: 'expected-value', color: '', text: `${inspect(expected)}\n`},
     {type: 'after', color: '', text: `\n----------`},
-  ]
+  ];
   
   const resetColor = '\x1b[0m';
   let message = '';
