@@ -53,7 +53,7 @@ const printAssertEqualResult = (hasEquality, actual, expected) => {
  * evaluate the keys
  */
 const findKey = (object, action) => {
-  // Loop through the properties in the object 
+  // Loop through the properties in the object
   for (const key in object) {
     // Perform callback on the key
     if (action(object[key])) {
