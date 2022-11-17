@@ -36,8 +36,8 @@ const printAssertEqualResult = (hasEquality, actual, expected) => {
     before: '\n',
     success: color.messageSuccess + `TEST PASSED🥳🥳🥳\n` + color.reset,
     failure: color.messageFailure + `TEST FAILED💥💥💥\n` + color.reset,
-    result: color.labelResult + `result:\n` + color.reset + `${actual}\n`,
-    expected: color.labelExpected + `expected:\n` + color.reset + `${expected}\n`,
+    result: color.labelResult + `result:\n` + color.reset + `${inspect(actual)}\n`,
+    expected: color.labelExpected + `expected:\n` + color.reset + `${inspect(expected)}\n`,
     after: `\n----------`,
     buildMessage: function() {
       let message = '';
