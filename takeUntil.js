@@ -75,15 +75,25 @@ const printAssertEqualResult = (hasEquality, actual, expected) => {
  * @returns {Array} The elements that were sliced from the input array
  */
 const takeUntil = function(array, callback) {
-  // ...
+  // Create a way to store the results
+  let output = [];
+  // First, ensure we know how to extract items from an array
+  output = array.slice();
+  // Ensure we know how to extract a range of items from an array
+  output = array.slice(0, 2);
+  // Write some rules so we know when to stop extracting items
+  // Extract the items using the new rules
+  // Return the new array
+  return output;
 }
 
+// TEST CASES
 const data1 = [1, 2, 5, 7, 2, -1, 2, 4, 5];
 const results1 = takeUntil(data1, x => x < 0);
+// Evaluate result against expected result
+assertArraysEqual(results1, [ 1, 2, 5, 7, 2 ]) // => True
 
 const data2 = ["I've", "been", "to", "Hollywood", ",", "I've", "been", "to", "Redwood"];
 const results2 = takeUntil(data2, x => x === ',');
-
-// Expected output
-assertArraysEqual(results1, [ 1, 2, 5, 7, 2 ]) // => True
+// Evaluate result against expected result
 assertArraysEqual(results2, [ 'I\'ve', 'been', 'to', 'Hollywood' ]) // => True
