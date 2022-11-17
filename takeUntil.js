@@ -77,12 +77,8 @@ const printAssertEqualResult = (hasEquality, actual, expected) => {
 const takeUntil = function(array, callback) {
   // Create a way to store the results
   let output = [];
-  // First, ensure we know how to extract items from an array
-  output = array.slice();
-  // Ensure we know how to extract a range of items from an array
-  output = array.slice(0, 2);
-  // Write some rules so we know when to stop extracting items
   // Extract the items using the new rules
+  output = array.slice(0, array.findIndex(callback));
   // Return the new array
   return output;
 }
