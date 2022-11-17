@@ -5,7 +5,7 @@
  * @param {string|number|boolean} expected - The second item to compare
  * @returns {string} Prints message with match outcome
  */
- const assertEqual = (actual, expected) => {
+const assertEqual = (actual, expected) => {
   console.log(printAssertEqualResult((actual === expected), actual, expected));
 };
 
@@ -49,12 +49,18 @@ const printAssertEqualResult = (hasEquality, actual, expected) => {
  * the callback/predicate returns a truthy value. If no key is found,
  * then it returns `undefined`.
  * @param {Object} object - The object from which to find a key
- * @param {Function} callback - The callback function that is used to
+ * @param {Function} action - The callback function that is used to
  * evaluate the keys
  */
 const findKey = (object, action) => {
-  // Some logic here
-}
+  // Loop through the properties in the object 
+  for (const key in object) {
+    // Perform callback on the key
+    if (action(object[key])) {
+      return key; // Key is a match, return the name of the key
+    }
+  }
+};
 
 // Test case:
 const testCaseObject = {
