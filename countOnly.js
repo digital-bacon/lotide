@@ -59,11 +59,13 @@ const countOnly = (allItems, itemsToCount) => {
   const result = {}; // An object to hold the results
   // Loop through provided itemsToCount
   for (const name of allItems) {
-    if (itemsToCount[name]) { // If name is found, and value = true...
-      // Increment the count of this name in the result object by 1
-      // If the name doesn't exist in the name object, create it
-      result[name] ? result[name] += 1 : result[name] = 1;
+    if (!itemsToCount[name]) {
+      continue;
     }
+    if (result[name] === undefined) {
+      result[name] = 0;
+    }
+    result[name]++;
   }
   return result;
 };
