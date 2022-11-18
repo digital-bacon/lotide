@@ -75,17 +75,9 @@ const printAssertEqualResult = (hasEquality, actual, expected) => {
 const without = (sourceItems, removeItems) => {
   let output = [];
   for (const sourceItem of sourceItems) {
-    let canAddItem = true;
-    loopRemoveItems:
-    for (const removeItem of removeItems) {
-      // Check if the current source item matches an item in remove items
-      if (removeItem === sourceItem) {
-        canAddItem = false;
-        break loopRemoveItems;
-      }
+    if (!removeItems.includes(sourceItem)) {
+      output.push(sourceItem);
     }
-    // Add source item to new array if not an item in removeItems
-    if (canAddItem) output.push(sourceItem);
   }
   // Return the new array
   return output;
