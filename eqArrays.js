@@ -56,9 +56,10 @@ const eqArrays = (array1, array2) => {
   // Ensure length of the arrays are as array2
   if (array1.length !== array2.length) return false;
   // Evaluate each element for equality
-  for (let element = 0; element < array2.length; element++) {
-    // Evaluate element type equality
-    if (array1[element] !== array2[element]) return false;
+  for (const element in array1) {
+    const value1 = array1[element];
+    const value2 = array2[element]; 
+    if (value1 !== value2) return false; // Not equal
   }
   // No tests remain, so we have equality
   return true;
