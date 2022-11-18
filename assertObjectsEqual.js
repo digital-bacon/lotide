@@ -59,7 +59,9 @@ const printAssertEqualResult = (hasEquality, actual, expected) => {
  * @param {Object} object2 - The second object to evaluate
  * @returns {boolean} The outcome of the evaluation
  */
-const eqObjects = (object1, object2) => {
+ const eqObjects = (object1, object2) => {
+  // Evaluate for undefined arguments
+  if (object1 instanceof Object === false || object2 instanceof Object === false) return;
   const keys1 = Object.keys(object1);
   const keys2 = Object.keys(object2);
   // Evaluate for total keys
