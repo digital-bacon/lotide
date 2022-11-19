@@ -58,7 +58,7 @@ const eqArrays = (array1, array2) => {
   // Evaluate each element for equality
   for (const element in array1) {
     const value1 = array1[element];
-    const value2 = array2[element]; 
+    const value2 = array2[element];
     if (value1 !== value2) return false; // Not equal
   }
   // No tests remain, so we have equality
