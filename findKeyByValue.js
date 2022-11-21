@@ -1,5 +1,3 @@
-const assertEqual = require('./assertEqual');
-
 /**
  * Function that takes in an object and a value. It should scan the
  * object and return the first key which contains the given value
@@ -20,7 +18,7 @@ const bestTVShowsByGenre = {
   drama:  "The Wire"
 };
 
-assertEqual(findKeyByValue(bestTVShowsByGenre, "The Wire"), "drama");
-assertEqual(findKeyByValue(bestTVShowsByGenre, "That '70s Show"), undefined);
+// assertEqual(findKeyByValue(bestTVShowsByGenre, "The Wire"), "drama");
+// assertEqual(findKeyByValue(bestTVShowsByGenre, "That '70s Show"), undefined);
 
 module.exports = findKeyByValue;

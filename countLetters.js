@@ -9,8 +9,6 @@ const assertEqual = (actual, expected) => {
   console.log(printAssertEqualResult((actual === expected), actual, expected));
 };
 
-const printAssertEqualResult = require('./printAssertEqualResult');
-
 /**
  * Function that counts the total instances of a letter in a string
  * @param {string} string - The string containing the characters you
@@ -32,7 +30,7 @@ const countLetters = (string) => {
   return result;
 };
 
-assertEqual(countLetters("Apple")["A"], 1);
-assertEqual(countLetters("Apple")["p"], 2);
+// assertEqual(countLetters("Apple")["A"], 1);
+// assertEqual(countLetters("Apple")["p"], 2);
 
 module.exports = countLetters;
