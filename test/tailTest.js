@@ -1,7 +1,24 @@
-const assertEqual = require('../assertEqual')
-const tail = require('../tail')
+const assert = require('chai').assert;
+const tail = require('../tail');
 
-// Test Case: Check the original array
-const words = ["Yo Yo", "Lighthouse", "Labs"];
-tail(words); // no need to capture the return value since we are not checking it
-assertEqual(words.length, 3); // original array should still have 3 elements!
+describe("#tail", () => {
+  
+  it("should return an array", () => {
+    const input = [ "Yo Yo", "Lighthouse", "Labs" ];
+    assert.isArray(tail(input), );
+  });
+  
+  it("should return an array with the first element removed", () => {
+    const input = [ "Yo Yo", "Lighthouse", "Labs" ];
+    const expectedResult = [ "Lighthouse", "Labs" ]
+    assert.deepEqual(tail(input), expectedResult);
+  });
+
+  it("should not mutate the original array", () => {
+    const input = [ "Yo Yo", "Lighthouse", "Labs" ];
+    tail(input);
+    const expectedResult = [ "Yo Yo", "Lighthouse", "Labs" ];
+    assert.deepEqual(input, expectedResult); 
+  });
+
+});
