@@ -8,10 +8,9 @@
 const countLetters = (string) => {
   const result = {}; // An object to hold the results
   // Loop through provided string
-  loopString:
   for (const character of string) {
     // Don't count spaces
-    if (character === ' ') continue loopString;
+    if (character === ' ') continue;
     // Increment the count of this character in the result object by 1
     // If the character doesn't exist in the result object, create it
     result[character] ? result[character] += 1 : result[character] = 1;
