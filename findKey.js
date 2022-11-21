@@ -1,4 +1,3 @@
-const { builtinModules } = require('module');
 const assertEqual = require('./assertEqual');
 
 /**
