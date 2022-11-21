@@ -1,24 +1,26 @@
 /**
  * Function that counts the total instances of a letter in a string
- * @param {string} string - The string containing the characters you
- * wish to countnode
- * @returns {Object} An object with characters as keys, and the total
- * instances of that character in the provided string
+ * @param {string} string - The string containing the elements you
+ * wish to count
+ * @returns {Object} An object with characters from `string` as
+ * value labels, and the total instances of that character as the value
  */
 const countLetters = (string) => {
-  const result = {}; // An object to hold the results
-  // Loop through provided string
-  for (const character of string) {
+  const results = {};
+  if (typeof string !== 'string') return results;
+  // Look at each element in the string
+  const stringAsArray = string.split('');
+  for (const element of stringAsArray) {
+    const keyLabel = element;
     // Don't count spaces
-    if (character === ' ') continue;
-    // Increment the count of this character in the result object by 1
-    // If the character doesn't exist in the result object, create it
-    result[character] ? result[character] += 1 : result[character] = 1;
+    if (keyLabel === ' ') continue;
+    // If the element is not yet a key in `results`, create it
+    if (!results[keyLabel]) results[keyLabel] = 0;
+    // Increment the count of this element in the results object by 1
+    // If the element doesn't exist in the results object, create it
+    results[element]++;
   }
-  return result;
+  return results;
 };
-
-// assertEqual(countLetters("Apple")["A"], 1);
-// assertEqual(countLetters("Apple")["p"], 2);
 
 module.exports = countLetters;
