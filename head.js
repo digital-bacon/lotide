@@ -9,6 +9,6 @@ const head = (array) => {
   if (array.length <= 0) return undefined;
   const result = array[0];
   return result;
-}
+};
 
 module.exports = head;

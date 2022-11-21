@@ -8,15 +8,15 @@ describe("#head", () => {
   });
 
   it("returns '5' for ['5']", () => {
-    assert.strictEqual(head(['5']), '5'); 
+    assert.strictEqual(head(['5']), '5');
   });
   
   it("returns undefined for an empty array", () => {
-    assert.isUndefined(head([])); 
+    assert.isUndefined(head([]));
   });
   
   it("returns undefined for an empty argument", () => {
-    assert.isUndefined(head()); 
+    assert.isUndefined(head());
   });
 
 });

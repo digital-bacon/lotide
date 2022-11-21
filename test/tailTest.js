@@ -5,12 +5,13 @@ describe("#tail", () => {
   
   it("should return an array", () => {
     const input = [ "Yo Yo", "Lighthouse", "Labs" ];
-    assert.isArray(tail(input), );
+    const expectedResult = [];
+    assert.isArray(tail(input), expectedResult);
   });
   
   it("should return an array with the first element removed", () => {
     const input = [ "Yo Yo", "Lighthouse", "Labs" ];
-    const expectedResult = [ "Lighthouse", "Labs" ]
+    const expectedResult = [ "Lighthouse", "Labs" ];
     assert.deepEqual(tail(input), expectedResult);
   });
 
@@ -18,7 +19,7 @@ describe("#tail", () => {
     const input = [ "Yo Yo", "Lighthouse", "Labs" ];
     tail(input);
     const expectedResult = [ "Yo Yo", "Lighthouse", "Labs" ];
-    assert.deepEqual(input, expectedResult); 
+    assert.deepEqual(input, expectedResult);
   });
 
 });

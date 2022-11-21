@@ -1,3 +1,5 @@
+const eqArrays = require('./eqArrays');
+
 /**
  * Function that evaluates two provided objects for equality
  * @param {Object} object1 - The first object to evaluate

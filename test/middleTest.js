@@ -17,7 +17,8 @@ describe("#middle", () => {
   
   it("should always return an array", () => {
     const input = [ "Yo Yo", "Lighthouse", "Labs" ];
-    assert.isArray(middle(input), );
+    const expectedResult = [];
+    assert.isArray(middle(input), expectedResult);
   });
   
   it("should return an empty array when given an array with two elements", () => {

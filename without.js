@@ -1,5 +1,3 @@
-const { builtinModules } = require("module");
-
 /**
  * Function that copies the `source` array, while excluding items that
  * are found in the `removeItems` array
