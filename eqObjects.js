@@ -29,21 +29,4 @@ const eqObjects = (object1, object2) => {
   return true;
 };
 
-// // Test cases: Primitives as property values
-// const ab = { a: "1", b: "2" };
-// const ba = { b: "2", a: "1" };
-// assertEqual(eqObjects(ab, ba), true); // => true
-
-// const abc = { a: "1", b: "2", c: "3" };
-// assertEqual(eqObjects(ab, abc), false); // => false
-
-// // Test cases: Arrays in property values
-// const obj1 = { c: "1", d: ["2", 3] };
-// const obj2 = { d: ["2", 3], c: "1" };
-// assertEqual(eqObjects(obj1, obj2), true); // => true
-
-// const obj3 = { c: "1", d: ["2", 3] };
-// const obj4 = { c: "1", d: ["2", 3, 4] };
-// assertEqual(eqObjects(obj3, obj4), false); // => false
-
 module.exports = eqObjects;
