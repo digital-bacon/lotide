@@ -7,7 +7,10 @@
  * array
  */
 const tail = (array) => {
-  return Array.isArray(array) && array.length > 0 ? array.slice[1] : undefined;
+  if (!Array.isArray(array)) return undefined;
+  if (array.length <= 0) return undefined;
+  const result = array.slice(1);
+  return result;
 };
 
 module.exports = tail;
