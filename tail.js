@@ -7,6 +7,7 @@
  * array
  */
 const tail = (array) => {
+  if (typeof array === 'undefined') return undefined;
   if (!Array.isArray(array)) return undefined;
   if (array.length <= 0) return undefined;
   const result = array.slice(1);
