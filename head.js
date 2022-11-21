@@ -1,5 +1,3 @@
-const assertEqual = require('./assertEqual');
-
 /**
  * Function that returns the first element from an array, or undefined
  * if the array was empty
