@@ -1,0 +1,32 @@
+{
+  "name": "lotide",
+  "version": "1.0.0",
+  "description": "A clone of the lodash JavaScript library to practice creating various types of functions using JS.",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/digital-bacon/lotide.git"
+  },
+  "keywords": [
+    "lotide",
+    "lodash",
+    "lighthouse",
+    "labs"
+  ],
+  "author": "Mark Bieganek",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/digital-bacon/lotide/issues"
+  },
+  "homepage": "https://github.com/digital-bacon/lotide#readme",
+  "devDependencies": {
+    "chai": "^4.3.7",
+    "mocha": "^9.2.2"
+  }
+}
