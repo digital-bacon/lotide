@@ -1,5 +1,5 @@
 const assert = require('chai').assert;
-const map = require('../map');
+const map = require('../lib/map');
 
 describe("#map", () => {
 

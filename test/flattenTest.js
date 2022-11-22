@@ -1,5 +1,5 @@
 const assert = require('chai').assert;
-const flatten = require('../flatten');
+const flatten = require('../lib/flatten');
 
 describe("#flatten", () => {
 

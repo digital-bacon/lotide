@@ -1,5 +1,5 @@
 const assert = require('chai').assert;
-const findKey = require('../findKey');
+const findKey = require('../lib/findKey');
 // To output objects with visibility on the values
 const inspect = require('util').inspect;
 

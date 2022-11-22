@@ -1,4 +1,4 @@
-const assertObjectsEqual = require('../assertObjectsEqual');
+const assertObjectsEqual = require('../lib/assertObjectsEqual');
 
 // TEST CODE
 // Test cases: Primitives as property values

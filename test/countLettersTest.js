@@ -1,5 +1,5 @@
 const assert = require('chai').assert;
-const countLetters = require('../countLetters');
+const countLetters = require('../lib/countLetters');
 
 describe("#countLetters", () => {
   

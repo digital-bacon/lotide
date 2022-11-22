@@ -1,5 +1,5 @@
 const assert = require('chai').assert;
-const takeUntil = require('../takeUntil');
+const takeUntil = require('../lib/takeUntil');
 
 describe("#takeUntil", () => {
 

@@ -1,5 +1,5 @@
 const assert = require('chai').assert;
-const eqObjects = require('../eqObjects');
+const eqObjects = require('../lib/eqObjects');
 
 describe("#eqObjects", () => {
 

@@ -1,5 +1,5 @@
 const assert = require('chai').assert;
-const countOnly = require('../countOnly');
+const countOnly = require('../lib/countOnly');
 
 describe("#countOnly", () => {
   
