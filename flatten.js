@@ -21,14 +21,4 @@ const flatten = (array) => {
   return buffer;
 };
 
-// // Test Case: 1 nested level of sub-arrays
-// assertObjectsEqual(flatten([1, 2, [3, 4], 5, [6]]), [1, 2, 3, 4, 5, 6]); // => [1, 2, 3, 4, 5, 6]
-// // // Test Case: 2 nested levels of sub-arrays
-// assertObjectsEqual(flatten([1, 2, [3, [1, 2, 3]], 4, 5, [6]]), [1, 2, 3, 1, 2, 3, 4, 5, 6]); // => [1, 2, 3, 4, 5, 6]
-// // // Test Case: 3 nested levels of sub-arrays
-// assertObjectsEqual(flatten([1, 2, [3, [1, 2, 3, [1, 2, 3]]], 4, 5, [6]]), [1, 2, 3, 1, 2, 3, 1, 2, 3, 4, 5, 6]); // => [1, 2, 3, 4, 5, 6]
-
-// // // Test Case: objects as array elements
-// console.log(flatten([1, 2, {apple: 3, orange: 4}, 5, [6]]),  [1, 2, {apple: 3, orange: 4}, 5, 6]); // => [1, 2, 3, 4, 5, 6]
-
 module.exports = flatten;
