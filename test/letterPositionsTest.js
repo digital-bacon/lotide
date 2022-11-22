@@ -21,11 +21,11 @@ describe("#letterPositions", () => {
     };
     const result = letterPositions(testInput);
     assert.deepEqual(result, expectedResult);
-    console.log(`Output: ${inspect(letterPositions(testInput))}`)
+    console.log(`Output: ${inspect(letterPositions(testInput))}`);
   });
 
   it('should return an empty object if no word was provided"', () => {
-    const expectedResult = { }
+    const expectedResult = { };
     const result = letterPositions();
     assert.deepEqual(result, expectedResult);
   });
