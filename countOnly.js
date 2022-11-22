@@ -4,10 +4,14 @@
  * @param {Array<string>} allItems - Array of strings to look through
  * @param {Object} itemsToCount - Object with key value pairs
  * specifying what to count
- * @param {string|number} itemsToCount.key - All keys in itemsToCount
- * match a name as the key name, with a boolean value indicating if the
- * name will be counted. For example, to count `John` assign a property
- * `John: true`
+ * @param {string} itemsToCount.key - All keys in itemsToCount
+ * match the value to find as the key name, with a boolean value
+ * indicating if the name will be counted. For example, to count `John`
+ * assign a property in `itemsToCount` of `John: true`
+ * @returns {Object} A list of values found, and their total occurrences
+ * @example When `allitems` is `['Karl', 'Fang', 'Salima', 'Fang']` and
+ * `itemsToCount` is `{ Karl: false, Salima: true, Fang, true}` the
+ * result will be `{ Salima: 1, Fang: 2 }`
  */
 const countOnly = (allItems, itemsToCount) => {
   const result = {}; // An object to hold the results
@@ -23,24 +27,5 @@ const countOnly = (allItems, itemsToCount) => {
   }
   return result;
 };
-
-// const firstNames = [
-//   "Karl",
-//   "Salima",
-//   "Agouhanna",
-//   "Fang",
-//   "Kavith",
-//   "Jason",
-//   "Salima",
-//   "Fang",
-//   "Joe"
-// ];
-
-// const result1 = countOnly(firstNames, { "Jason": true, "Karima": true, "Fang": true, "Agouhanna": false });
-
-// assertEqual(result1["Jason"], 1);
-// assertEqual(result1["Karima"], undefined);
-// assertEqual(result1["Fang"], 2);
-// assertEqual(result1["Agouhanna"], undefined);
 
 module.exports = countOnly;
