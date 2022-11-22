@@ -21,11 +21,11 @@ describe("#map", () => {
   it(`should return ['dnuorg', 'lortnoc', 'ot'] when given a callback to reverse words in an array`, () => {
     const expectedResult = ['dnuorg', 'lortnoc', 'ot'];
     const reverse = (string) => {
-        const reversed = [];
-        const joined = string.split('');
-        joined.forEach(character => reversed.unshift(character));
-        return reversed.join('');
-      };
+      const reversed = [];
+      const joined = string.split('');
+      joined.forEach(character => reversed.unshift(character));
+      return reversed.join('');
+    };
     assert.deepEqual(map(words, reverse), expectedResult);
   });
 

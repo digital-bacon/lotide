@@ -10,7 +10,7 @@ describe("#takeUntil", () => {
     assert.deepEqual(takeUntil(array, callback), expectedResult);
   });
   
-  it(`should return [ 'I\'ve', 'been', 'to', 'Hollywood' ] when given ["I've", "been", "to", "Hollywood", ",", "I've", "been", "to", "Redwood"] and a callback of (x) => x === ','`, () => {
+  it(`should return [ 'I've', 'been', 'to', 'Hollywood' ] when given ["I've", "been", "to", "Hollywood", ",", "I've", "been", "to", "Redwood"] and a callback of (x) => x === ','`, () => {
     const array = ["I've", "been", "to", "Hollywood", ",", "I've", "been", "to", "Redwood"];
     const expectedResult = [ 'I\'ve', 'been', 'to', 'Hollywood' ];
     const callback = x => x === ',';

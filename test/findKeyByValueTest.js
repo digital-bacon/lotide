@@ -10,17 +10,17 @@ describe("#findKeyByValue", () => {
     comedy: "Brooklyn Nine-Nine",
     drama:  "The Wire"
   };
-  console.log(`using object: ${inspect(testCaseObject)}`)
+  console.log(`using object: ${inspect(testCaseObject)}`);
   
   it("returns `drama` when keyValue argument = 'The Wire'", () => {
     const findKey = 'The Wire';
-    const result = findKeyByValue(testCaseObject, findKey)
+    const result = findKeyByValue(testCaseObject, findKey);
     assert.strictEqual(result, 'drama');
   });
   
   it("returns undefined when keyValue argument is not found in the object", () => {
     const findKey = 'Star Wars';
-    const result = findKeyByValue(testCaseObject, findKey)
+    const result = findKeyByValue(testCaseObject, findKey);
     assert.isUndefined(result);
   });
   

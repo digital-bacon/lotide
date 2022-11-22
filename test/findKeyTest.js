@@ -13,17 +13,17 @@ describe("#findKey", () => {
     "Ora":       { stars: 2 },
     "Akelarre":  { stars: 3 }
   };
-  console.log(`using object: ${inspect(testCaseObject)}`)
+  console.log(`using object: ${inspect(testCaseObject)}`);
   
   it("returns `noma` for `x => x.stars === 2`", () => {
     const testLogic = x => x.stars === 2;
-    const result = findKey(testCaseObject, testLogic)
+    const result = findKey(testCaseObject, testLogic);
     assert.strictEqual(result, 'noma');
   });
   
   it("returns undefined for `x => x === 'John'", () => {
     const testLogic = x => x === 'John';
-    const result = findKey(testCaseObject, testLogic)
+    const result = findKey(testCaseObject, testLogic);
     assert.isUndefined(result);
   });
   

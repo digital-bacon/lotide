@@ -14,7 +14,7 @@ describe("#without", () => {
     const wordsBefore = ["hello", "world", "lighthouse"];
     const array2 = ["lighthouse"];
     const wordsAfter = ["hello", "world", "lighthouse"];
-    without(wordsAfter, array2)
+    without(wordsAfter, array2);
     assert.deepEqual(wordsBefore, wordsAfter);
   });
   
